@@ -4,18 +4,20 @@
         <div class="container mx-auto px-6">
             <div class="md:flex justify-between">
                 <div class="">
-                    <p class="text-6xl font-bold"><span class="block">Hello,</span>im <span
+                    <p class="text-6xl font-bold animate-fade-in-right" id="hello"><span class="block ">Hello,</span>im <span
                             class="text-yellow-400 text-stroke text-stroke-black">Wisnu</span></p>
                     <button
-                        class="border-solid border-2 border-black px-4 py-2 mt-3 hover:bg-yellow-400 btn-shadow-yellow btn-box transition ease-in-out delay-150">Contact
+                        class="border-solid border-2 border-black px-4 py-2 mt-3 hover:bg-yellow-400 btn-shadow-yellow btn-box transition ease-in-out delay-150 animate-fade-in-up" id="btn-contact-hero">Contact
                         Me</button>
                 </div>
-                <div class="hidden md:flex md:flex-col">
+                <div class="hidden md:flex md:flex-col" id="web">
                     <div class="text-white text-right text-8xl ">
-                        <h1 class="font-extrabold text-stroke-2 text-stroke-black text-shadow-lg">Web</h1>
+                        <h1 class="font-extrabold text-stroke-2 text-stroke-black text-shadow-lg animate-fade-in-left">Web
+                        </h1>
                     </div>
                     <div class="text-white text-right text-8xl ">
-                        <h1 class="font-extrabold text-stroke-2 text-stroke-black text-shadow-lg">Developer</h1>
+                        <h1 class="font-extrabold text-stroke-2 text-stroke-black text-shadow-lg animate-fade-in-left-1">
+                            Developer</h1>
                     </div>
                 </div>
             </div>
@@ -23,8 +25,10 @@
     </section>
     <section class="mt-14 md:mt-40">
         <div class="container px-6 md:px-16 mx-auto ">
-            <h1 class="text-center text-3xl font-bold">About Me</h1>
-            <h2 class="text-center text-3xl font-bold text-yellow-400">Freelancer Web Developer</h2>
+            <div >
+                <h1 class="text-center text-3xl font-bold js-show-on-scroll">About Me</h1>
+                <h2 class="text-center text-3xl font-bold text-yellow-400">Freelancer Web Developer</h2>
+            </div>
             <div class="md:grid md:grid-cols-3 mt-10 flex flex-col">
                 <div class="mx-auto col-span-1">
                     <img src="{{ asset('img/wisnu.jpg') }}" alt=""
@@ -56,14 +60,16 @@
                     <i class="gg-arrow-long-right"></i>
                 </div>
                 <div class="flex flex-col md:flex-row gap-6">
-                    <div class="border-2 border-solid border-black h-96 w-full md:w-72 py-8 px-5 image-shadow relative flex flex-col items-center ">
+                    <div
+                        class="border-2 border-solid border-black h-96 w-full md:w-72 py-8 px-5 image-shadow relative flex flex-col items-center ">
                         <ion-icon name="code-slash-outline" class="text-6xl mt-5"></ion-icon>
                         <h2 class="font-bold text-xl my-3">Web Developer</h2>
                         <p class="text-center">Company Profile, E-commerce, Personal Website, Custom website and etc.</p>
                         <button class="absolute bottom-5 right-5">View Example <ion-icon name="arrow-forward-outline"
                                 class="align-middle"></ion-icon></button>
                     </div>
-                    <div class="border-2 border-solid border-black h-96 w-full md:w-72 py-8 px-5 image-shadow relative flex flex-col items-center">
+                    <div
+                        class="border-2 border-solid border-black h-96 w-full md:w-72 py-8 px-5 image-shadow relative flex flex-col items-center">
                         <ion-icon name="color-palette-outline" class="text-6xl mt-5"></ion-icon>
                         <h2 class="font-bold text-xl my-3">UI/UX Designer</h2>
                         <p class="text-center">Web Design and
@@ -79,9 +85,11 @@
     <section class="mt-40">
         <div class="container mx-auto px-6">
             <div class="md:grid md:grid-cols-3 flex flex-col flex-col-reverse">
-                
+
                 <div class="md:col-span-2 h-120 grid grid-cols-2 md:grid-cols-4 gap-2">
-                    <div class="bg-yellow-400 border-2 border-solid border-black md:col-span-2 md:row-span-2 row-span-2 col-span-2">2</div>
+                    <div
+                        class="bg-yellow-400 border-2 border-solid border-black md:col-span-2 md:row-span-2 row-span-2 col-span-2">
+                        2</div>
                     <div class="bg-yellow-400 border-2 border-solid border-black ">1</div>
                     <div class="bg-yellow-400 border-2 border-solid border-black ">3</div>
                     <div class="bg-yellow-400 border-2 border-solid border-black ">4</div>
@@ -107,8 +115,8 @@
                 <label class="block mb-4">
                     <span class="text-gray-700">Email address</span>
                     <input type="email" class="mt-1 block w-full" placeholder="john@example.com">
-                  </label>
-                  <label class="block mb-4">
+                </label>
+                <label class="block mb-4">
                     <span class="text-gray-700">Subject</span>
                     <input type="text" class="mt-1 block w-full" placeholder="Subject">
                 </label>
@@ -118,9 +126,10 @@
                 </label>
                 <div class="flex justify-center mt-4">
                     <button
-                        class="border-solid border-2 border-black px-4 py-2 mt-2 hover:bg-yellow-400 btn-shadow-yellow btn-box transition ease-in-out delay-150 content-center">Send Message</button>
+                        class="border-solid border-2 border-black px-4 py-2 mt-2 hover:bg-yellow-400 btn-shadow-yellow btn-box transition ease-in-out delay-150 content-center">Send
+                        Message</button>
                 </div>
-                
+
             </form>
         </div>
     </section>
