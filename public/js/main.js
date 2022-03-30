@@ -20,9 +20,9 @@ $(window).scroll(function () {
     $("#btn-contact-hero").css("margin-left", "0px");
   }
   if (wScroll < $(this).height()) {
-    $("#sosmed").css("transform", "translateX(-" + wScroll * 2 + "px" + ")");
+    $(".sosmed").css("transform", "translateX(-" + wScroll * 2 + "px" + ")");
   } else {
-    $("#sosmed").css("transform", "translateX(0px)");
+    $(".sosmed").css("transform", "translateX(0px)");
   }
   // if (wScroll < $('#aboutme').offset) {
 

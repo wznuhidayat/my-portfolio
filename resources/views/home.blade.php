@@ -1,6 +1,6 @@
 @extends('main_template')
 @section('container')
-    <section class="py-48">
+    <section class="py-48" id="home">
         <div class="container mx-auto px-6">
             <div class="md:flex justify-between">
                 <div class="">
@@ -11,7 +11,7 @@
                         class="border-solid border-2 border-black px-4 py-2 mt-3 hover:bg-yellow-400 btn-shadow-yellow btn-box transition ease-in-out delay-150 animate-fade-in-up"
                         id="btn-contact-hero">Contact
                         Me</button>
-                    <div class="mt-40 text-right md:hidden" id="sosmed">
+                    <div class="mt-40 text-right md:hidden animate-fade-in-left sosmed" >
                         <a href="https://www.facebook.com/next.recpector" class="mr-2">
                             <ion-icon name="logo-facebook" size="medium" class="text-2xl"></ion-icon>
                         </a>
@@ -35,7 +35,7 @@
                         <h1 class="font-extrabold text-stroke-2 text-stroke-black text-shadow-lg animate-fade-in-left-1">
                             Developer</h1>
                     </div>
-                    <div class="mt-40 text-right" id="sosmed">
+                    <div class="mt-40 text-right animate-fade-in-left sosmed" >
                         <a href="https://www.facebook.com/next.recpector" class="mr-2">
                             <ion-icon name="logo-facebook" size="medium" class="text-2xl"></ion-icon>
                         </a>
@@ -54,7 +54,7 @@
             </div>
         </div>
     </section>
-    <section class="mt-14 md:mt-40">
+    <section class="mt-14 pt-14 md:mt-5 md:pt-16" id="aboutme">
         <div class="container px-6 md:px-16 mx-auto ">
             <div>
                 <h1 class="text-center text-3xl font-bold js-scroll-fade-up">About Me</h1>
@@ -73,18 +73,18 @@
                     </p>
                     <p class="mt-3 text-left js-scroll-fade-right">i also like graphic design such as typography,
                         UI/UX and logo design even though my design is not good.</p>
-                    <p class="mt-3 text-left js-scroll-fade-right">able to work with team or individual, open minded and
+                    <p class="mt-3 text-left js-scroll-fade-right mb-7">able to work with team or individual, open minded and
                         working
                         on ambitious projects with positive people</p>
-                    <button
-                        class="border-solid border-2 border-black px-4 py-2 mt-3 hover:bg-yellow-400 btn-shadow-yellow btn-box transition ease-in-out delay-150 js-scroll-fade-left">View
-                        Resume</button>
+                    <a href="/resume"
+                        class="border-solid border-2 border-black px-4 py-2 mt-3 hover:bg-yellow-400 btn-shadow-yellow btn-box transition ease-in-out delay-150 js-scroll-fade-right  ">View
+                        Resume</a>
                 </div>
             </div>
         </div>
     </section>
-    <section class="mt-5 md:mt-40">
-        <div class="container mx-auto px-6 py-40">
+    <section class="mt-5 md:mt-28 md:pt-16" id="myservice">
+        <div class="container mx-auto px-6 py-14">
             <div class="md:flex md:justify-between px-6 md:pl-6 md:pr-12">
                 <div class="md:mt-32 mb-8 md:mb-0">
                     <h1 class="text-left text-yellow-400 text-2xl font-bold js-scroll-fade-right">What I Do</h1>
@@ -114,8 +114,8 @@
             </div>
         </div>
     </section>
-    <section class="mt-40">
-        <div class="container mx-auto px-6">
+    <section class="pt-8 md:pt-16 md:mt-28" id="myproject">
+        <div class="container mx-auto px-6 py-10">
             <div class="md:grid md:grid-cols-3 flex md:flex-col flex-col-reverse ">
 
                 <div class="md:col-span-2 h-120 grid grid-cols-2 md:grid-cols-4 gap-2 js-scroll-my-project "
@@ -223,8 +223,8 @@
             </div>
         </div>
     </section>
-    <section class="mt-40">
-        <div class="container mx-auto px-6">
+    <section class="pt-10 md:mt-32" id="contact">
+        <div class="container mx-auto px-6 py-10">
             <h1 class="text-center text-3xl font-bold mb-10 js-scroll-fade-up">Contact</h1>
             @if (Session::has('status'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 md:mx-32 relative mb-5"

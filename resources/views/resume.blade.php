@@ -1,7 +1,7 @@
 @extends('resume_template')
 @section('container')
     <section class="relative min-h-screen md:flex">
-        <aside class="bg-yellow-400 text-black w-0 md:w-3/4 space-y-6 pt-6 px-0 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out  md:flex md:flex-col md:justify-between overflow-y-auto animate-fade-in-left-1">
+        <aside class="bg-yellow-400 text-black w-0 md:w-1/5 space-y-6 pt-6 px-0 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out  md:flex md:flex-col md:justify-between overflow-y-auto animate-fade-in-left-1">
             <h1 class="font-bold text-9xl rotate-90 relative top-28 text-yellow-400 text-stroke-2 text-stroke-black">Resume</h1>
         </aside>
         <div class="p-10">
