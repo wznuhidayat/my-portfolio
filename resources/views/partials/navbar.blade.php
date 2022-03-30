@@ -1,4 +1,4 @@
-<nav class="bg-white z-40 fixed inset-x-0 top-0 transition-all duration-500" id="navbar">
+<nav class="bg-white z-10 fixed inset-x-0 top-0 transition-all duration-500" id="navbar">
     <div class="container flex justify-between items-center mx-auto px-8 md:px-6 py-2 md:py-4">
       <div>
         <img src="{{ asset('img/mwh.png') }}" alt="" class="object-cover w-6">

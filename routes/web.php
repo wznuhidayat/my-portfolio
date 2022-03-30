@@ -17,3 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/main', [Main::class, 'index']);
+Route::get('/resume', [Main::class, 'resume']);
+Route::post('/contact', [Main::class, 'sendMail']);

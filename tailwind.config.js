@@ -24,12 +24,15 @@ module.exports = {
       animation: {
         'fade-in-up': 'fadeinup 0.5s ease-in',
         'fade-in-up-1': 'fadeinup 1s ease-in',
-        'fade-in-down': 'fade-in-down 0.5s ease-in',
+        'fade-in-down-fast': 'fade-in-down 0.5s ease-in',
         'fade-in-down': 'fade-in-down 1s ease-in',
+        'fade-in-down-slow': 'fade-in-down 1s ease-in',
         'fade-in-left': 'fade-in-left 0.5s ease-in',
         'fade-in-left-1': 'fade-in-left 1s ease-in',
-        'fade-in-right': 'fade-in-right 0.5s ease-in',
-        'fade-in-right-1': 'fade-in-right 1s ease-in',
+        'fade-in-right-fast': 'fade-in-right 0.5s ease-in',
+        'fade-in-right': 'fade-in-right 1s ease-in',
+        'fade-in-right-sec': 'fade-in-right 2s ease-in',
+        'scale-f-small': 'scale-from-small 2s ease-in',
 
       },
       keyframes: {
@@ -63,11 +66,21 @@ module.exports = {
         'fade-in-right': {
           '0%': {
             opacity: '0',
-            transform: 'translateX(+100px)'
+            transform: 'translateX(+80px)'
           },
           '100%': {
             opacity: '1',
             transform: 'translateX(0)'
+          },
+        },
+        'scale-from-small': {
+          '0%': {
+            // opacity: '0',
+            transform: 'scale(-2)'
+          },
+          '100%': {
+            // opacity: '1',
+            transform: 'scale(0)'
           },
         }
       }

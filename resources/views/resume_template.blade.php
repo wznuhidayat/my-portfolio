@@ -4,10 +4,10 @@
 @include('partials/head')
 
 <body class="font-poppins">
-    @include('partials/navbar')
+    {{-- @include('partials/navbar') --}}
     @yield('container')
-    @include('partials/footer')
-    
+    {{-- @include('partials/footer') --}}
+
 </body>
 @include('partials/js')
 
