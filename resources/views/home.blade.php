@@ -54,8 +54,8 @@
             </div>
         </div>
     </section>
-    <section class="mt-14 pt-14 md:mt-5 md:pt-16" id="aboutme">
-        <div class="container px-6 md:px-16 mx-auto ">
+    <section class="pt-14 md:mt-5 md:pt-16" id="aboutme">
+        <div class="container px-4 md:px-16 mx-auto ">
             <div>
                 <h1 class="text-center text-3xl font-bold js-scroll-fade-up">About Me</h1>
                 <h2 class="text-center text-3xl font-bold text-yellow-400 js-scroll-fade-up">Freelancer Web Developer</h2>
@@ -83,7 +83,7 @@
             </div>
         </div>
     </section>
-    <section class="mt-5 md:mt-28 md:pt-16" id="myservice">
+    <section class="pt-5 mt-12 md:mt-28 md:pt-16" id="myservice">
         <div class="container mx-auto px-6 py-14">
             <div class="md:flex md:justify-between px-6 md:pl-6 md:pr-12">
                 <div class="md:mt-32 mb-8 md:mb-0">
@@ -114,7 +114,7 @@
             </div>
         </div>
     </section>
-    <section class="pt-8 md:pt-16 md:mt-28" id="myproject">
+    <section class="mt-10 pt-8 md:pt-16 md:mt-28" id="myproject">
         <div class="container mx-auto px-6 py-10">
             <div class="md:grid md:grid-cols-3 flex md:flex-col flex-col-reverse ">
 
@@ -131,7 +131,7 @@
                                     <h2 class="font-bold text-2xl text-white">Premier League App</h2>
                                     <h2 class="text-lg text-slate-200">Laravel 9, Tailwind CSS, Api-Football-Beta(Rapid API) </h2>
                                 </div>
-                                <button onclick="toggleModal()">
+                                <button class="view-detail" relid="1">
                                     <ion-icon name="eye-outline" class="text-white" size="large"></ion-icon>
                                 </button>
                             </div>
@@ -223,7 +223,7 @@
             </div>
         </div>
     </section>
-    <section class="pt-10 md:mt-32" id="contact">
+    <section class="mt-10 pt-10 md:mt-32" id="contact">
         <div class="container mx-auto px-6 py-10">
             <h1 class="text-center text-3xl font-bold mb-10 js-scroll-fade-up">Contact</h1>
             @if (Session::has('status'))
@@ -275,12 +275,11 @@
                     {{-- <button type="button" class="py-2 px-4 fixed right-10 top-10" onclick="toggleModal()"><ion-icon name="close-circle-outline" size="large"></ion-icon></button> --}}
                     
                     <div class="overflow-scroll p-3 w-full h-[95%] bg-white">
-                        <h1 class="text-3xl font-bold mb-2">Premier League App</h1>
-                        <h1 class="font-sm mb-5">Laravel 9, Tailwind CSS, Api-Football-Beta(Rapid API)                        </h1>
-                        <img src="{{ asset('img/FireShot Capture 001 -  - 127.0.0.1.png') }}" alt="">
-                        <img src="{{ asset('img/FireShot Capture 002 -  - 127.0.0.1.png') }}" alt="">
-                        <img src="{{ asset('img/FireShot Capture 003 -  - 127.0.0.1.png') }}" alt="">
-                        <img src="{{ asset('img/FireShot Capture 004 -  - 127.0.0.1.png') }}" alt="">
+                        <div class="header border-2 border-solid border-black w-full h-fit px-2 py-3 mb-4 bg-yellow-400">
+                            <h1 class="text-3xl font-bold mb-2" id="title-project"></h1>
+                            <h1 class="font-sm">Laravel 9, Tailwind CSS, Api-Football-Beta(Rapid API)</h1>
+                        </div>
+                        <div id="content"></div>
                     </div>
                     <div class="bg-white px-4 text-right">
                         <a href="https://github.com/wznuhidayat/football-app" class="py-1 px-2 text-dark text-sm hover:bg-green-400 mr-2 border border-solid border-black"><ion-icon name="logo-github"></ion-icon></a>

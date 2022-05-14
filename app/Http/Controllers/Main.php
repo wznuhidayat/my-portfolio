@@ -5,19 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use Illuminate\Support\Facades\Auth;
+use App\Models\TempProjectCategory;
+use App\Models\Project;
+use App\Models\ProjectCategory;
+
 
 class Main extends Controller
 {
     public function index()
     {
-        return view('home');
+        // $temp = new TempProjectCategory();
+        // $temps = $temp->getCategoryByProduct();
+        $temps = TempProjectCategory::with(['project','projectCategory'])->get();
+        return view('home',  compact('temps'));
     }
     public function resume()
     {
         return view('resume');
     }
-    public function sendMail(Request $request){
-        
+    public function sendMail(Request $request)
+    {
+
         $subject =  $request->input('subject');
         $name = $request->input('name');
         $emailAddress = $request->input('email');
@@ -26,7 +35,7 @@ class Main extends Controller
         $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
         try {
             // Pengaturan Server
-           // $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+            // $mail->SMTPDebug = 2;                                 // Enable verbose debug output
             $mail->isSMTP();                                      // Set mailer to use SMTP
             $mail->Host = 'smtp.gmail.com';                  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -44,7 +53,7 @@ class Main extends Controller
 
             // ke siapa akan kita balas emailnya
             $mail->addReplyTo($emailAddress, $name);
-            
+
             // $mail->addCC('cc@example.com');
             // $mail->addBCC('bcc@example.com');
 
@@ -63,11 +72,43 @@ class Main extends Controller
 
             $request->session()->flash('status', 'Your email has been sent.');
             return redirect()->back();
-
         } catch (Exception $e) {
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
         }
-        
     }
+    public function admin()
+    {
+        return view('admin.dashboard');
+    }
+    public function login()
+    {
+        return view('login');
+    }
+    public function myAuth(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('admin');
+        }
+
+        return back()->with('loginError', 'Login failed!');
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
+    }
+   
 }
