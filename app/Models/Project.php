@@ -26,5 +26,8 @@ class Project extends Model
     {
         return $this->belongsToMany(Project::class,'temp_project_category','project_id','category_id');
     }
-
+    public function categoryes()
+    {
+        return $this->belongsToMany(ProjectCategory::class,'temp_project_category','project_id','category_id');
+    }
 }

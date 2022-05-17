@@ -183,27 +183,29 @@ $( window ).load(function() {
 //modal
 function toggleModal() {
   document.getElementById('modal').classList.toggle('hidden')
+  
 }
 $( "#alertcontact" ).click(function() {
   $(this).parent().addClass('hidden');
 });
 
 
-$('.view-detail').click(function(){
+// $('.view-detail').click(function(){
           
-  var id = $(this).attr('relid'); //get the attribute value
-  $.ajax({
-      url : "getProject/"+id,
-      type:'GET',
-      data: {
-        "id":id
-      },
-      success:function(response) {
-        console.log(response);
-        $('#title-project').html(response.title); //hold the response in id and show on popup
-                $('#content').html(response.content);
-                $('#student_phone').html(response.phone);
-                toggleModal();
-    }
-  });
-});
+//   var id = $(this).attr('relid'); //get the attribute value
+//   $.ajax({
+//       url : "getProject/"+id,
+//       type:'GET',
+//       data: {
+//         "id":id
+//       },
+//       success:function(response) {
+//         console.log(response);
+//         console.log(response.title);
+//         $('#title-project').html(response.title); //hold the response in id and show on popup
+//         $('#content').html(response.content);
+//         $('#student_phone').html(response.phone);
+//         toggleModal();
+//     }
+//   });
+// });

@@ -1,8 +1,10 @@
 @extends('main_template')
 @section('container')
+   
     <section class="py-48" id="home">
         <div class="container mx-auto px-6">
             <div class="md:flex justify-between">
+               
                 <div class="">
                     <p class="text-6xl font-bold animate-fade-in-right-fast" id="hello"><span
                             class="block ">Hello,</span>im <span
@@ -117,9 +119,10 @@
     <section class="mt-10 pt-8 md:pt-16 md:mt-28" id="myproject">
         <div class="container mx-auto px-6 py-10">
             <div class="md:grid md:grid-cols-3 flex md:flex-col flex-col-reverse ">
-
+                
                 <div class="md:col-span-2 h-120 grid grid-cols-2 md:grid-cols-4 gap-2 js-scroll-my-project "
                     id="galleryProject">
+                    @foreach ($projects as $item)
                     <div
                         class="bg-gray-700 border-2 border-solid border-black md:col-span-2 md:row-span-2 row-span-2 col-span-2 overflow-hidden group relative ">
                         <img src="{{ asset('img/FireShot Capture 001 -  - 127.0.0.1.png') }}" alt=""
@@ -128,10 +131,14 @@
                             class="group-hover:absolute w-full top-16 md:top-80 left-5 transform ease-in duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-11">
                             <div class="flex justify-between w-full pr-10">
                                 <div>
-                                    <h2 class="font-bold text-2xl text-white">Premier League App</h2>
-                                    <h2 class="text-lg text-slate-200">Laravel 9, Tailwind CSS, Api-Football-Beta(Rapid API) </h2>
+                                    <h2 class="font-bold text-2xl text-white">{{$item->title}}</h2>
+                                    <h2 class="text-lg text-slate-200">
+                                        @foreach ($item->categoryes as $category)
+                                        {{$category->name}}, 
+                                        @endforeach
+                                    </h2>
                                 </div>
-                                <button class="view-detail" relid="1">
+                                <button class="view-detail" data-title="{{$item->title}}" data-content="{{$item->content}}" data-categoryes="{{$item->categoryes}}" id="select" onclick="toggleModal()">
                                     <ion-icon name="eye-outline" class="text-white" size="large"></ion-icon>
                                 </button>
                             </div>
@@ -142,6 +149,7 @@
                             <ion-icon name="eye-outline"></ion-icon>
                         </div>
                     </div>
+                    @endforeach
                     <div class="bg-white border-2 border-solid border-black overflow-hidden group relative ">
                         <img src="{{ asset('img/no-image.png') }}" alt=""
                             class="object-contain object-center w-full transform ease-in duration-500 group-hover:mix-blend-overlay">
@@ -160,6 +168,7 @@
 
                         </div>
                     </div>
+
                     <div class="bg-white border-2 border-solid border-black overflow-hidden group relative ">
                         <img src="{{ asset('img/no-image.png') }}" alt=""
                             class="object-contain object-center w-full transform ease-in duration-500 group-hover:mix-blend-overlay">
@@ -264,20 +273,20 @@
             </form>
         </div>
     </section>
-    <div class="fixed z-20 overflow-y-auto top-0 w-full left-0 hidden" id="modal">
+    <div class="fixed z-20 overflow-y-auto top-0 w-full left-0 hidden modal" id="modal">
         <div class="flex items-center justify-center min-height-100vh px-4 text-center sm:block sm:p-0">
             <div class="fixed inset-0 transition-opacity">
                 <div class="absolute inset-0 bg-gray-900 opacity-75">
                 </div>
                 {{-- <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span> --}}
-                <div class="inline-block align-center p-5  w-10/12 h-5/6 bg-white text-left shadow-xl transform transition-all sm:my-8 sm:align-middle border-2 border-solid border-black "
+                <div class="inline-block align-center p-5  w-10/12 h-5/6 bg-white text-left shadow-xl transform transition-all sm:my-8 sm:align-middle border-2 border-solid border-black"
                     role="dialog" aria-modal="true" aria-labelledby="modal-headline">
                     {{-- <button type="button" class="py-2 px-4 fixed right-10 top-10" onclick="toggleModal()"><ion-icon name="close-circle-outline" size="large"></ion-icon></button> --}}
                     
                     <div class="overflow-scroll p-3 w-full h-[95%] bg-white">
                         <div class="header border-2 border-solid border-black w-full h-fit px-2 py-3 mb-4 bg-yellow-400">
                             <h1 class="text-3xl font-bold mb-2" id="title-project"></h1>
-                            <h1 class="font-sm">Laravel 9, Tailwind CSS, Api-Football-Beta(Rapid API)</h1>
+                            <h1 class="font-sm" id="category"></h1>
                         </div>
                         <div id="content"></div>
                     </div>

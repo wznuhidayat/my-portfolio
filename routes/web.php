@@ -30,5 +30,5 @@ Route::post('/logout', [Main::class, 'logout']);
 Route::get('/admin/myproject', [Main::class, 'myProject'])->name('myProject');
 Route::resource('project', MyProject::class)->middleware('auth');
 Route::post('project/upload', [MyProject::class, 'upload'])->name('project.upload');
-Route::get('getProject/{id}', [MyProject::class, 'getProject']);
+Route::get('getProject/{id}', [Main::class, 'getProject']);
 Route::resource('categoryprojects', CategoryProjects::class)->middleware('auth');

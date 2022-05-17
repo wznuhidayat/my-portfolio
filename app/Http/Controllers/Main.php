@@ -15,10 +15,14 @@ class Main extends Controller
 {
     public function index()
     {
-        // $temp = new TempProjectCategory();
-        // $temps = $temp->getCategoryByProduct();
-        $temps = TempProjectCategory::with(['project','projectCategory'])->get();
-        return view('home',  compact('temps'));
+        $projects = Project::with(['categoryes'])->get();
+        // dd(Project::with(['categoryes'])->get()->toArray());
+        return view('home',  compact('projects'));
+    }
+    public function getProject(Request $request)
+    {
+        $projects = Project::with(['categoryes'])->findOrFail($request->input('id'))->first();
+        echo json_encode($projects);
     }
     public function resume()
     {
