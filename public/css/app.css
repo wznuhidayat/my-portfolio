@@ -804,6 +804,18 @@ select {
 .top-\[-400px\] {
   top: -400px;
 }
+.top-20 {
+  top: 5rem;
+}
+.top-24 {
+  top: 6rem;
+}
+.top-32 {
+  top: 8rem;
+}
+.top-36 {
+  top: 9rem;
+}
 .z-20 {
   z-index: 20;
 }
@@ -944,6 +956,9 @@ select {
 .h-120 {
   height: 30rem;
 }
+.h-full {
+  height: 100%;
+}
 .h-5\/6 {
   height: 83.333333%;
 }
@@ -963,6 +978,24 @@ select {
 }
 .h-16 {
   height: 4rem;
+}
+.h-20 {
+  height: 5rem;
+}
+.h-32 {
+  height: 8rem;
+}
+.h-60 {
+  height: 15rem;
+}
+.h-80 {
+  height: 20rem;
+}
+.h-10 {
+  height: 2.5rem;
+}
+.h-4 {
+  height: 1rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -993,6 +1026,18 @@ select {
 }
 .w-6 {
   width: 1.5rem;
+}
+.w-44 {
+  width: 11rem;
+}
+.w-20 {
+  width: 5rem;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-4 {
+  width: 1rem;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -1179,6 +1224,9 @@ select {
 .gap-2 {
   gap: 0.5rem;
 }
+.gap-4 {
+  gap: 1rem;
+}
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1251,6 +1299,10 @@ select {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+.bg-slate-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
 .object-contain {
   -o-object-fit: contain;
@@ -1343,6 +1395,14 @@ select {
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .pt-14 {
   padding-top: 3.5rem;
@@ -1704,6 +1764,14 @@ select {
     top: 8rem;
   }
 
+  .md\:top-60 {
+    top: 15rem;
+  }
+
+  .md\:top-52 {
+    top: 13rem;
+  }
+
   .md\:z-auto {
     z-index: auto;
   }
@@ -1759,6 +1827,14 @@ select {
     display: none;
   }
 
+  .md\:h-96 {
+    height: 24rem;
+  }
+
+  .md\:h-8 {
+    height: 2rem;
+  }
+
   .md\:w-80 {
     width: 20rem;
   }
@@ -1777,6 +1853,10 @@ select {
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-8 {
+    width: 2rem;
   }
 
   .md\:translate-x-0 {
@@ -1878,6 +1958,15 @@ select {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:font-bold {
+    font-weight: 700;
   }
 
   .md\:opacity-100 {

@@ -117,110 +117,45 @@
         </div>
     </section>
     <section class="mt-10 pt-8 md:pt-16 md:mt-28" id="myproject">
-        <div class="container mx-auto px-6 py-10">
+        <div class="container mx-auto px-6 py-14">
             <div class="md:grid md:grid-cols-3 flex md:flex-col flex-col-reverse ">
                 
-                <div class="md:col-span-2 h-120 grid grid-cols-2 md:grid-cols-4 gap-2 js-scroll-my-project "
+                <div class="md:col-span-2 h-120 w-full js-scroll-my-project carouserl-wrap "
                     id="galleryProject">
-                    @foreach ($projects as $item)
+                    <div class="owl-carousel owl-theme">
+                    {{-- <div class="h-96 w-42 bg-slate-400 border-2 border-solid border-black  overflow-hidden group relative"> Your Content </div>
+                    <div class="h-96 w-42 bg-slate-400 border-2 border-solid border-black  overflow-hidden group relative"> Your Content </div> --}}
+                     @foreach ($projects as $item)
                     <div
-                        class="bg-gray-700 border-2 border-solid border-black md:col-span-2 md:row-span-2 row-span-2 col-span-2 overflow-hidden group relative ">
-                        <img src="{{ asset('img/FireShot Capture 001 -  - 127.0.0.1.png') }}" alt=""
-                            class="object-contain object-center w-full transform ease-in duration-500 group-hover:mix-blend-overlay">
+                        class="bg-gray-700 h-80 md:h-96 w-42 border-2 border-solid border-black group relative ">
+                        <img src="{{ asset('images/'.$item->thumbnail) }}" alt=""
+                            class="object-contain object-center w-full transform ease-in duration-500 group-hover:mix-blend-overlay h-full">
                         <div
-                            class="group-hover:absolute w-full top-16 md:top-80 left-5 transform ease-in duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-11">
+                            class="group-hover:absolute w-full top-36 md:top-52 left-5 transform ease-in duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-11">
                             <div class="flex justify-between w-full pr-10">
                                 <div>
-                                    <h2 class="font-bold text-2xl text-white">{{$item->title}}</h2>
-                                    <h2 class="text-lg text-slate-200">
+                                    <h2 class="font-semibold text-md md:font-bold md:text-2xl text-white">{{$item->title}}</h2>
+                                    <h2 class="text-sm md:text-lg text-slate-200">
                                         @foreach ($item->categoryes as $category)
                                         {{$category->name}}, 
                                         @endforeach
                                     </h2>
                                 </div>
-                                <button class="view-detail" data-title="{{$item->title}}" data-content="{{$item->content}}" data-categoryes="{{$item->categoryes}}" id="select" onclick="toggleModal()">
-                                    <ion-icon name="eye-outline" class="text-white" size="large"></ion-icon>
+                                <button class="view-detail" data-title="{{$item->title}}" data-content="{{$item->content}}" data-categoryes="{{$item->categoryes}}" data-github="{{$item->github}}" id="select" onclick="toggleModal()">
+                                    <ion-icon name="eye-outline" class="text-white w-5 md:w-8 h-5 md:h-8" ></ion-icon>
                                 </button>
                             </div>
 
                         </div>
                         <div
-                            class="group-hover:absolute top-16 md:top-80 right-5 transform ease-in duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-11">
+                            class="group-hover:absolute top-36 md:top-52 right-5 transform ease-in duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-11">
                             <ion-icon name="eye-outline"></ion-icon>
                         </div>
                     </div>
                     @endforeach
-                    <div class="bg-white border-2 border-solid border-black overflow-hidden group relative ">
-                        <img src="{{ asset('img/no-image.png') }}" alt=""
-                            class="object-contain object-center w-full transform ease-in duration-500 group-hover:mix-blend-overlay">
-                        <div
-                            class="group-hover:absolute w-full left-3 top-10 md:top-32 opacity-0 transform ease-in duration-300 group-hover:opacity-100 group-hover:translate-y-5">
-                            <div class="flex justify-between w-full pr-7">
-                                <div class="">
-                                    <h2 class="font-bold text-md md:text-lg text-white">Title Project</h2>
-                                    <h2 class="text-sm text-slate-200">Tecnology, APi</h2>
-                                </div>
-                                <button onclick="toggleModal()">
-                                    <ion-icon name="eye-outline" class="text-white" size="small"></ion-icon>
-                                </button>
-                            </div>
-
-
-                        </div>
                     </div>
-
-                    <div class="bg-white border-2 border-solid border-black overflow-hidden group relative ">
-                        <img src="{{ asset('img/no-image.png') }}" alt=""
-                            class="object-contain object-center w-full transform ease-in duration-500 group-hover:mix-blend-overlay">
-                        <div
-                            class="group-hover:absolute w-full left-3 top-10 md:top-32 opacity-0 transform ease-in duration-300 group-hover:opacity-100 group-hover:translate-y-5">
-                            <div class="flex justify-between w-full pr-7">
-                                <div class="">
-                                    <h2 class="font-bold text-md md:text-lg text-white">Title Project</h2>
-                                    <h2 class="text-sm text-slate-200">Tecnology, APi</h2>
-                                </div>
-                                <button onclick="toggleModal()">
-                                    <ion-icon name="eye-outline" class="text-white" size="small"></ion-icon>
-                                </button>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <div class="bg-white border-2 border-solid border-black overflow-hidden group relative ">
-                        <img src="{{ asset('img/no-image.png') }}" alt=""
-                            class="object-contain object-center w-full transform ease-in duration-500 group-hover:mix-blend-overlay">
-                        <div
-                            class="group-hover:absolute w-full left-3 top-10 md:top-32 opacity-0 transform ease-in duration-300 group-hover:opacity-100 group-hover:translate-y-5">
-                            <div class="flex justify-between w-full pr-7">
-                                <div class="">
-                                    <h2 class="font-bold text-md md:text-lg text-white">Title Project</h2>
-                                    <h2 class="text-sm text-slate-200">Tecnology, APi</h2>
-                                </div>
-                                <button onclick="toggleModal()">
-                                    <ion-icon name="eye-outline" class="text-white" size="small"></ion-icon>
-                                </button>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <div class="bg-white border-2 border-solid border-black overflow-hidden group relative ">
-                        <img src="{{ asset('img/no-image.png') }}" alt=""
-                            class="object-contain object-center w-full transform ease-in duration-500 group-hover:mix-blend-overlay">
-                        <div
-                            class="group-hover:absolute w-full left-3 top-10 md:top-32 opacity-0 transform ease-in duration-300 group-hover:opacity-100 group-hover:translate-y-5">
-                            <div class="flex justify-between w-full pr-7">
-                                <div class="">
-                                    <h2 class="font-bold text-md md:text-lg text-white">Title Project</h2>
-                                    <h2 class="text-sm text-slate-200">Tecnology, APi</h2>
-                                </div>
-                                <button onclick="toggleModal()">
-                                    <ion-icon name="eye-outline" class="text-white" size="small"></ion-icon>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                   
+                    
                 </div>
                 <div class="md:mt-32 md:px-6 mb-8 md:mb-0">
                     <h1 class="text-right font-bold text-3xl md:text-5xl mb-2 js-scroll-fade-left">My Project</h1>
@@ -232,8 +167,8 @@
             </div>
         </div>
     </section>
-    <section class="mt-10 pt-10 md:mt-32" id="contact">
-        <div class="container mx-auto px-6 py-10">
+    <section class="mt-10 pt-8 md:mt-32" id="contact">
+        <div class="container mx-auto px-6 py-8">
             <h1 class="text-center text-3xl font-bold mb-10 js-scroll-fade-up">Contact</h1>
             @if (Session::has('status'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 md:mx-32 relative mb-5"
@@ -291,7 +226,7 @@
                         <div id="content"></div>
                     </div>
                     <div class="bg-white px-4 text-right">
-                        <a href="https://github.com/wznuhidayat/football-app" class="py-1 px-2 text-dark text-sm hover:bg-green-400 mr-2 border border-solid border-black"><ion-icon name="logo-github"></ion-icon></a>
+                        <a href="#" id="github" class="py-1 px-2 text-dark text-sm hover:bg-green-400 mr-2 border border-solid border-black"><ion-icon name="logo-github"></ion-icon></a>
                         <button type="button" class="py-1 px-2 text-dark text-sm hover:bg-yellow-400 mr-2 border border-solid border-black"><ion-icon name="link-outline"></ion-icon></button>
                         <button type="button" class="py-1 px-2 text-dark text-sm hover:bg-red-400 mr-2 border border-solid border-black" onclick="toggleModal()"><ion-icon name="close-outline"></ion-icon></button>
                     </div>
